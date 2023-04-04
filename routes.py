@@ -30,6 +30,7 @@ def askai():
     return jsonify({'answer': answer})
 
 def prompt(question):
+
     response = openai.Completion.create(
         engine="text-davinci-003",
         prompt=question,
