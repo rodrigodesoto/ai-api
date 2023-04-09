@@ -40,5 +40,6 @@ def prompt(question):
     response = response.choices[0]['text'].strip()
     return response
 
+
 if __name__ == '__main__':
     app.run()
