@@ -2,3 +2,4 @@ Flask==2.2.3
 Werkzeug==2.2.3
 Gunicorn==20.1.0
 openai
+boto==2.49.0
