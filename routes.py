@@ -3,7 +3,7 @@ import config
 from flask import Flask, request, jsonify
 openai.api_key = config.OPENAI_API_KEY
 
-app = Flask(__name__)
+application = Flask(__name__)
 
 valid_api_keys = {config.API_KEY}
 
@@ -13,11 +13,11 @@ def check_api_key():
     elif request.headers['api_key'] not in valid_api_keys:
         return jsonify({'message': 'Invalid API key'}), 401
 
-@app.before_request
+@application.before_request
 def before_request():
     check_api_key()
 
-@app.route('/askai', methods=['POST'])
+@application.route('/askai', methods=['POST'])
 def askai():
     # Recebe a pergunta em formato JSON
     data = request.get_json()
@@ -41,4 +41,4 @@ def prompt(question):
     return response
 
 if __name__ == '__main__':
-    app.run()
+    application.run()
