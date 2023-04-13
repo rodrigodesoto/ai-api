@@ -1,8 +1,6 @@
 import os
 
 import openai
-from boto.s3.connection import S3Connection
-s3 = S3Connection(os.environ['API_KEY'], os.environ['S3_SECRET'])
 from flask import Flask, request, jsonify
 openai.api_key = os.environ['OPENAI_API_KEY']
 
